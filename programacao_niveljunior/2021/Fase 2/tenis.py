@@ -16,3 +16,5 @@ for n in range(4):
 
 resultado = menorDif(niveis)
 print(resultado)
+
+# todo: terminar a implementação da lógica
