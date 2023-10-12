@@ -9,15 +9,14 @@ v = 0
 
 if n%2!=0:
     elemento_meio = nums[somas]
-    if elemento_meio != primeira_soma:
-        pass
-    else:
+    if elemento_meio == primeira_soma:
         for r in range(somas):
             ultimo = nums[-(r+1)]
             atual = nums[r]
             soma_atual = atual+ultimo
             if soma_atual == primeira_soma:
                 v+=1
+        
 else:
     for r in range(somas):
         ultimo = nums[-(r+1)]
