@@ -1,0 +1,19 @@
+Grafo:
+ - 
+- O que é?
+    -
+    No que diz respeito aos assuntos relacionados à área de computação, o grafo é uma estrutura de dados que representa um conjunto de elementos (pontos) chamados nós ou vértices, os quais são unidos (ou conectados) por outros elementos (linhas) chamados arestas ou arcos.
+
+Formas de representação:
+ - lista de adjacências
+ - Matriz de Adjcências
+
+Grafos esparsos:
+ - 
+ Vértices muito menores do que arestas. |E| < |V|²
+
+Grafos densos:
+ - 
+ Quantidade de arestas é quase igual ao de vértices. (Melhor representado por matriz de adjacência)
+
+
