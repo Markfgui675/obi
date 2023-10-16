@@ -1,0 +1,3 @@
+# Como contribuir para o projeto
+
+Toda contribuição é bem-vinda neste projeto, desde que venha para agregar valor e conhecimento para tal. ...
