@@ -1,9 +1,9 @@
 n = int(input())
 m = int(input())
-figurinhas = []
+fig = []
 for x in range(m):
     f = int(input())
-    if f not in figurinhas:
-        figurinhas.append(f)
+    if f not in fig:
+        fig.append(f)
 
-print(n - len(figurinhas))
+print(n - len(fig))
