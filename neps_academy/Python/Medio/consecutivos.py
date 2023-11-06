@@ -1,25 +1,20 @@
-n = int(input())
-vs = input().split(' ')
-valores = [int(x) for x in vs]
-consecutivos = []
-existe = False
-for v in range(len(valores)):
-    if v == 0:
-        valor_anterior = valores[v]
-        consecutivos.append([1, valores[v]])
-    else:
-        if valor_anterior == valores[v]:
-            for va in consecutivos:
-                if va[1]==valores[v]:
-                    va[0]+=1
-        else:
-            valor_anterior = valores[v]
-            #verifica se já existe
-            for e in consecutivos:
-                if e[1] == valores[v]:
-                    existe = True
-                    e[0]=1
-            if not existe:
-                consecutivos.append([1, valores[v]])
+def calcular_pontos(N, valores):
+    max_pontos = 1
+    pontos_atual = 1
 
-print(sorted(consecutivos, reverse=True)[0][0])
+    for i in range(1, N):
+        if valores[i] == valores[i - 1]:
+            pontos_atual += 1
+        else:
+            max_pontos = max(max_pontos, pontos_atual)
+            pontos_atual = 1
+
+    return max(max_pontos, pontos_atual)
+
+# Leitura da entrada
+N = int(input())
+valores = list(map(int, input().split()))
+
+# Chamada da função e impressão do resultado
+pontos = calcular_pontos(N, valores)
+print(pontos)
