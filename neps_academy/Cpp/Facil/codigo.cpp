@@ -8,8 +8,8 @@ int main(){
     cin >> n;
     int nums[n];
     for (int i = 0; i < n; i++){
-        scanf("%d", &b);
-        nums[i] = b;
+        cin >> b;
+        nums[i]=b;
     }
     for (int i = 0; i < n; i++){
         if (i%3==0 && i > 0){
