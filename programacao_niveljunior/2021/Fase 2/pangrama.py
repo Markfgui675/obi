@@ -5,13 +5,13 @@ c = str(input(''))
 letras_c_semordem = []
 for x in range(len(c)):
     if x == 0:
-        letras_c_semordem.append(c[x])
+        if c[x] in letras:
+            letras_c_semordem.append(c[x])
     else:
-        if (c[x] != ' ') and (c[x] != ',') and (c[x] != ':'):
-            if c[x] not in letras_c_semordem:
-                letras_c_semordem.append(c[x])
+        if c[x] in letras and c[x] not in letras_c_semordem:
+            letras_c_semordem.append(c[x])
 
-if letras_c_semordem == letras:
+if sorted(letras_c_semordem) == letras:
     print('S')
 else:
     print('N')

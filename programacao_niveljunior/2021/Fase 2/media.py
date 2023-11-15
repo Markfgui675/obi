@@ -1,5 +1,4 @@
-a = int(input(''))
-b = int(input(''))
+a, b = map(int, input().split())
 
 dif = b-a
 result = a - dif
