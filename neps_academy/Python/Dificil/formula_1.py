@@ -3,16 +3,16 @@ res = []
 while True:
     g, p = map(int, input().split())
 
-    if g == 0 and p == 0:
+    if g == 0 and p == 0: 
         break
 
     grandes_premios = []
     pontuacao_total = []
     pilotos = []
-    for grande_premio in range(g):
+    for grande_premio in range(g): # O(n)
         k = list(map(int, input().split()))
         grandes_premios.append(k)
-        for kk in k:
+        for kk in k: # O(n)
             if kk not in pilotos:
                 pilotos.append(kk)
                 pontuacao_total.append([0, kk])
