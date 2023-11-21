@@ -5,14 +5,17 @@ for i in range(n):
 
 k = int(input())
 res = []
+certo = False
+for i in range(n):
+    for j in range(n):
+        if nums[i] != nums[j] and nums[i] + nums[j] == k:
+            res.append(nums[i])
+            res.append(nums[j])
+            certo = True
+            break
+    if certo:
+        break
 
-meio = len(nums)//2
-faltante = k-nums[meio]
-if faltante in nums:
-    res.append(nums[meio])
-    res.append(faltante)
-    for r in sorted(res):
-        print(r, end=' ')
-else:
-    print('tá aqui não, man')
+for r in sorted(res):
+    print(r, end=' ')
 

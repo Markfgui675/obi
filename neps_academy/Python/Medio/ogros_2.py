@@ -4,7 +4,7 @@ premio = list(map(int, input().split()))
 ogros = list(map(int, input().split()))
 res = []
 
-def busca_binaria(arr, x):
+def busca_binaria(arr, x): #O(log n)
     esquerda, direita = 0, len(arr) - 1
     while esquerda <= direita:
         meio = (esquerda + direita) // 2
@@ -18,7 +18,7 @@ def busca_binaria(arr, x):
 
     return esquerda
 
-for gg in ogros:
+for gg in ogros: #O(n)
     indice = busca_binaria(premio_intervalo, gg)
 
     if indice == 0:
@@ -30,3 +30,6 @@ for gg in ogros:
 
 for r in res:
     print(r, end=' ')
+
+# Complexidade: O(n*O(log n))
+# O(n log n)
