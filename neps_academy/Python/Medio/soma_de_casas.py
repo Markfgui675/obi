@@ -5,17 +5,13 @@ for i in range(n):
 
 k = int(input())
 res = []
-certo = False
-for i in range(n):
-    for j in range(n):
-        if nums[i] != nums[j] and nums[i] + nums[j] == k:
-            res.append(nums[i])
-            res.append(nums[j])
-            certo = True
-            break
-    if certo:
+
+for num in nums:
+    complemento = k - num
+    if complemento in nums and complemento != num:
+        res.append(complemento)
+        res.append(num)
         break
 
 for r in sorted(res):
     print(r, end=' ')
-
