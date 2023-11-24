@@ -4,7 +4,7 @@ premio = list(map(int, input().split()))
 ogros = list(map(int, input().split()))
 res = []
 
-def search(arr: list[int], x: int): # pior caso O(n)
+def search(arr: list[int], x: int): 
     r = 0
     if len(arr) == 1 and x < arr[0]:
         r = 0
@@ -26,13 +26,9 @@ def search(arr: list[int], x: int): # pior caso O(n)
     return r
 
 
-for gg in ogros: # O(n)
+for gg in ogros:
     result = search(premio_intervalo, gg)
     res.append(premio[result])
 
-for r in res: #O(n)
+for r in res: 
     print(r, end=' ')
-
-# Complexidade = O(n*O(n)) + O(n)
-# O(n²) + O(n)
-# O(n²)
