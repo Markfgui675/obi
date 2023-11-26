@@ -1,12 +1,20 @@
+def eh_primo(x):
+	#Seu código
+    if x <= 1:
+        return False
+    elif x == 2:
+        return True
+    elif x % 2 == 0:
+        return False
+    else:
+        
+        for i in range(3, int(x**0.5) + 1, 2):
+            if x % i == 0:
+                return False
+        return True
+
 x = int(input())
-divisores = 0
-for i in range(x):
-    if i > 0:
-        if x%i==0:
-            divisores+=1
-    if divisores > 2:
-        break
-if divisores > 2:
-    print('N')
+if eh_primo(x):
+	print('S')
 else:
-    print('S')
+	print('N')
