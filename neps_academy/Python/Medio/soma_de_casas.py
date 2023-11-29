@@ -1,17 +1,12 @@
 n = int(input())
-nums = []
-for i in range(n):
-    nums.append(int(input()))
-
+nums = set(int(input()) for _ in range(n))
 k = int(input())
 res = []
-
 for num in nums:
     complemento = k - num
     if complemento in nums and complemento != num:
-        res.append(complemento)
-        res.append(num)
+        res.extend(sorted([num, complemento]))
         break
 
-for r in sorted(res):
+for r in res:
     print(r, end=' ')
