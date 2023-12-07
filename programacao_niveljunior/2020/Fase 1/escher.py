@@ -1,31 +1,15 @@
-n = int(input(''))
-ns = str(input('')).split(' ')
-nums = [int(x) for x in ns]
+n = int(input())
+nums = list(map(int, input().split()))
 
-somas = int(len(nums)/2)
-primeira_soma = nums[0]+nums[-1]
-soma_atual = 0
-v = 0
+soma = nums[0]+nums[-1]
+escher = True
 
-if n%2!=0:
-    elemento_meio = nums[somas]
-    if elemento_meio == primeira_soma:
-        for r in range(somas):
-            ultimo = nums[-(r+1)]
-            atual = nums[r]
-            soma_atual = atual+ultimo
-            if soma_atual == primeira_soma:
-                v+=1
-        
-else:
-    for r in range(somas):
-        ultimo = nums[-(r+1)]
-        atual = nums[r]
-        soma_atual = atual+ultimo
-        if soma_atual == primeira_soma:
-            v+=1
+for i in range(1, n+1):
+    if nums[i]+nums[n-1+1] != soma:
+        escher = False
+        break
 
-if v == somas:
+if escher:
     print('S')
 else:
     print('N')
