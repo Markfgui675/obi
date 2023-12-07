@@ -1,18 +1,19 @@
 caixas = []
 
-for c in range(3):
-    caixas.append(int(input('')))
+for i in range(3):
+    caixas.append(int(input()))
 
-# a, b e c
+caixas = sorted(caixas)
+c_caixas = caixas[:]
+v = 3
 
-a = caixas[0]
-b = caixas[1]
-c = caixas[-1]
-
-if (a+b) < c:
+maior_caixa = max(c_caixas)
+c_caixas.remove(maior_caixa)
+if sum(c_caixas) < maior_caixa:
     print(1)
 else:
-    if a==b==c:
-        print(3)
-    elif a <= b:
-        print(2)
+    for c in range(len(caixas)-1):
+        if caixas[c] < caixas[c+1]:
+            v-=1
+    
+    print(v)
