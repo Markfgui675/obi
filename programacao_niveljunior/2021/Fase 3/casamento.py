@@ -1,94 +1,37 @@
-int_a = str(input(''))
-int_b = str(input(''))
+lista1 = ''
+lista2 = ''
 
-r_a = []
-r_b = []
-result_a = ''
-result_b = ''
-list_a = [int(x) for x in int_a]
-list_b = [int(y) for y in int_b]
+a = [int(y) for y in input()]
+b = [int(x) for x in input()]
 
-a_menor_b = True if len(list_a) < len(list_b) else False
-b_menor_a = True if len(list_b) < len(list_a) else False
-
-if a_menor_b:
-  dif = len(list_b) - len(list_a)
-  for d in range(dif):
-    list_a.insert(0, 0)
-
-  for i in range(len(list_a)):
-    if list_a[i] < list_b[i]:
-      r_b.append(list_b[i])
-    if list_a[i] > list_b[i]:
-      r_a.append(list_a[i])
-    if list_a[i] == list_b[i]:
-      r_a.append(list_a[i])
-      r_b.append(list_b[i])
-elif b_menor_a:
-  dif = len(list_b) - len(list_a)
-  for d in range(dif):
-    list_a.insert(0, 0)
-
-  for i in range(len(list_a)):
-    if list_a[i] < list_b[i]:
-      r_b.append(list_b[i])
-    if list_a[i] > list_b[i]:
-      r_a.append(list_a[i])
-    if list_a[i] == list_b[i]:
-      r_a.append(list_a[i])
-      r_b.append(list_b[i])
-else:
-  for i in range(len(list_a)):
-    if list_a[i] < list_b[i]:
-      r_b.append(list_b[i])
-    if list_a[i] > list_b[i]:
-      r_a.append(list_a[i])
-    if list_a[i] == list_b[i]:
-      r_a.append(list_a[i])
-      r_b.append(list_b[i])
-
-#verificação de zeros===========
-
-so_tem_zero_A = False
-for za in range(len(r_a)):
-  if r_a[za] ==  0:
-    so_tem_zero_A = True
+#preenche as diferenças com o número zero se houver
+dif = abs(len(a)-len(b))
+if dif != 0:
+  if len(a) < len(b):
+    for d in range(abs(dif)):
+      a.insert(d, 0)
   else:
-    so_tem_zero_A = False
-    break
-
-so_tem_zero_B = False
-for zb in range(len(r_b)):
-  if r_b[zb] == 0:
-    so_tem_zero_B = True
+    for d in range(abs(dif)):
+      b.insert(d, 0)
+  
+#verificação
+for k in range(len(a)):
+  if a[k] > b[k]:
+    lista1+=str(a[k])
+  elif b[k] > a[k]:
+    lista2+=str(b[k])
   else:
-    so_tem_zero_B = False
-    break
+    lista1+=str(a[k])
+    lista2+=str(b[k])
 
-#=============================
+if lista1 == '':
+  lista1 = -1
 
-if so_tem_zero_A:
-  result_a = '0'
-else:
-  if len(r_a) == 0:
-    result_a = '-1'
-  else:
-    for ra in range(len(r_a)):
-      if ra == 0:
-        result_a = str(r_a[ra])
-      else:
-        result_a += str(r_a[ra])
+if lista2 == '':
+  lista2 = -1
 
-if so_tem_zero_B:
-  result_b = '0'
-else:
-  if len(r_b) == 0:
-    result_b = '-1'
-  else:
-    for rb in range(len(r_b)):
-      if rb == 0:
-        result_b = str(r_b[rb])
-      else:
-        result_b += str(r_b[rb])
+res = [int(lista1), int(lista2)]
+res = sorted(res)
 
-print(f'{result_b} {result_a}')
+for r in res:
+  print(r, end=' ')
