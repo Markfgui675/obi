@@ -19,7 +19,7 @@ def merge(lista, inicio, meio, fim):
         elif top_right >= len(right):
             lista[k] = left[top_left]
             top_left+=1
-        elif left[top_left] > right[top_right]:
+        elif left[top_left] < right[top_right]:
             lista[k] = left[top_left]
             top_left+=1
         else:
