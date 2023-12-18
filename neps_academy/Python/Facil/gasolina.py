@@ -1,14 +1,14 @@
 n = int(input())
 k = int(input())
 
-cota = k
-soma = 0
+cota_total = k+60
+preco = 0
 
-if n <= 60:
-    cota+=n
-    soma = cota*1500
-else:
-    cota+=60
-    restante = n-cota
-    soma = (cota*1500)+(restante*3000)
-print(soma)
+if cota_total >= n:
+    preco = n*1500
+elif cota_total < n:
+    dif = n-cota_total
+    preco = cota_total*1500
+    preco+=dif*3000
+
+print(preco)
